@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <h2>Sample Form</h2>
+
+    <form>
+      Query:<br />
+      <br />
+      <input type="text" name="firstname" value="select * from" />
+      <br />
+      <br />
+      Role:<br />
+      <br />
+      <br />
+      <select>
+        <option>Admin</option>
+        <option>User</option>
+      </select>
+      <br /><br />
+      If query type is insert then define permissions:
+      <br />
+      <br />
+      <input type="text" value="" />
+      <br />
+      <br />
+      <input type="submit" value="Submit" />
+    </form> -->
+
+    <!-- Form  -->
+    <div class="card" style="width: 80%;">
+      <h5 class="card-header bg-info info-color text-white text-center py-4">
+        <strong>App</strong>
+      </h5>
+
+      <!--Card content-->
+      <div class="card-body px-lg-5 pt-0" style="margin-top: 2%;">
+        <!-- Form -->
+        <form class="text-center" style="color: #757575;" action="#!">
+          <label class="font-weight-bold">Query</label>
+          <!-- Query -->
+          <div class="md-form">
+            <input
+              type="text"
+              class="form-control"
+              name="query"
+              placeholder="select * from"
+            />
+          </div>
+
+          <!-- Role -->
+          <div class="font-weight-bold" style="margin-top: 2%;">Role</div>
+          <select class="mdb-select">
+            <option value="" disabled>Choose option</option>
+            <option value="1" selected>Admin</option>
+            <option value="2">Regular User</option>
+          </select>
+
+          <!--Define Permissions-->
+          <div class="md-form" style="margin-top: 2%;">
+            <label class="font-weight-bold"
+              >If query type is insert then define permissions</label
+            >
+            <input
+              class="form-control md-textarea"
+              placeholder="permissions"
+            ></input>
+          </div>
+
+          <!-- Send button -->
+          <button
+            class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect"
+            type="submit"
+          >
+            Send
+          </button>
+        </form>
+        <!-- Form -->
+      </div>
+    </div>
+    <!-- Form -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
