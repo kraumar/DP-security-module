@@ -3,7 +3,7 @@ const mysql = require("mysql");
 const path = require("path");
 const morgan = require("morgan");
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3060;
 
 // create connection
 const db = mysql.createConnection({

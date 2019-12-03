@@ -11,7 +11,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/ogor.jpg" />
+
+    <title>Ogorkowa</title>
   </head>
   <body>
     <!-- <h2>Sample Form</h2>
@@ -40,6 +42,7 @@
     </form> -->
 
     <!-- Form  -->
+
     <div class="card" style="width: 80%;">
       <h5 class="card-header bg-info info-color text-white text-center py-4">
         <strong>App</strong>
@@ -61,23 +64,60 @@
           </div>
 
           <!-- Role -->
-          <div class="font-weight-bold" style="margin-top: 2%;">Role</div>
-          <select class="mdb-select">
-            <option value="" disabled>Choose option</option>
-            <option value="1" selected>Admin</option>
-            <option value="2">Regular User</option>
-          </select>
+<!--          <div class="font-weight-bold" style="margin-top: 2%;">Role</div>-->
+<!--          <select class="mdb-select">-->
+<!--            <option value="" disabled>Choose option</option>-->
+<!--            <option value="1" selected>Admin</option>-->
+<!--            <option value="2">ModeratorL1</option>-->
+<!--            <option value="3">ModeratorL2</option>-->
+<!--            <option value="4">ModeratorL21</option>-->
+<!--            <option value="5">ModeratorL22</option>-->
+<!--            <option value="6">ModeratorL31</option>-->
+<!--            <option value="7">ModeratorL32</option>-->
+<!--            <option value="8">UserL1</option>-->
+<!--            <option value="8">UserL2</option>-->
 
-          <!--Define Permissions-->
-          <div class="md-form" style="margin-top: 2%;">
-            <label class="font-weight-bold"
-              >If query type is insert then define permissions</label
-            >
-            <input
-              class="form-control md-textarea"
-              placeholder="permissions"
-            ></input>
+<!--          </select>-->
+          <br>
+          <label class="font-weight-bold">Role</label>
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="admin_radio" name="groupOfDefaultRadios">
+            <label class="custom-control-label" for="admin_radio">Admin</label>
           </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="moderatorL1" name="groupOfDefaultRadios" checked>
+            <label class="custom-control-label" for="moderatorL1">ModeratorL1</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="moderatorL2" name="groupOfDefaultRadios">
+            <label class="custom-control-label" for="moderatorL2">ModeratorL2</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="moderatorL21" name="groupOfDefaultRadios">
+            <label class="custom-control-label" for="moderatorL21">ModeratorL21</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="moderatatorL22" name="groupOfDefaultRadios" checked>
+            <label class="custom-control-label" for="moderatatorL22">ModeratorL22</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="moderatorL31" name="groupOfDefaultRadios">
+            <label class="custom-control-label" for="moderatorL31">ModeratorL31</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="moderatorL32" name="groupOfDefaultRadios">
+            <label class="custom-control-label" for="moderatorL32">ModeratorL32</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="userL1" name="groupOfDefaultRadios" checked>
+            <label class="custom-control-label" for="userL1">UserL1</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" class="custom-control-input" id="userL2" name="groupOfDefaultRadios">
+            <label class="custom-control-label" for="userL2">userL2</label>
+          </div>
+
+          <br>
 
           <!-- Send button -->
           <button
