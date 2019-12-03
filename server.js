@@ -2,8 +2,9 @@ const express = require("express");
 const mysql = require("mysql");
 const path = require("path");
 const morgan = require("morgan");
+const bodyParser = require("body-parser");
 
-const port = process.env.PORT || 3060;
+const port = process.env.PORT || 3000;
 
 // create connection
 const db = mysql.createConnection({
@@ -23,6 +24,7 @@ db.connect(err => {
 });
 
 const app = express();
+app.use(bodyParser.json());
 app.use(morgan("tiny"));
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -34,6 +36,29 @@ app.get("/createdb", (req, res) => {
     console.log(result);
     res.send("database created...");
   });
+});
+
+// dummy
+app.post("/marekkrauze", (req, res) => {
+  const userQuery = req.body.userQuery;
+  const checkedRole = req.body.checkedRole;
+  let resultFromMySQL;
+
+  // do the stuff
+  const write = writeSomething();
+
+  selectAll().then(results => {
+    resultFromMySQL = results;
+    res.send({
+      username: "Marek Krauze to fajny gosc",
+      userQuery,
+      checkedRole,
+      write,
+      resultFromMySQL
+    });
+  });
+
+  // res.json({ username: "Marek Krauze to fajny gosc", userQuery, checkedRadio });
 });
 
 // create table
@@ -98,6 +123,21 @@ app.get("/delete/:id", (req, res) => {
     res.send("deleted...");
   });
 });
+
+// test calls
+const writeSomething = () => {
+  return "hello";
+};
+
+selectAll = () => {
+  return new Promise((resolve, reject) => {
+    let sql = "SELECT * FROM acl_table_permission";
+    let query = db.query(sql, (err, results) => {
+      if (err) reject(new Error(err));
+      resolve(results);
+    });
+  });
+};
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
