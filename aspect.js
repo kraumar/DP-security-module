@@ -16,4 +16,4 @@ let prepareQuery = query => {
 
 prepareQuery = before(prepareQuery);
 
-module.exports = { before, prepareQuery };
+module.exports = { prepareQuery };
