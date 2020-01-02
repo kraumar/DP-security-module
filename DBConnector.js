@@ -1,3 +1,5 @@
+// SINGLETON
+
 const _mysql = require("mysql");
 
 let _connection = "";

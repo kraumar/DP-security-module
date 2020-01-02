@@ -4,6 +4,7 @@ const mysql = require("mysql");
 const path = require("path");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const fs = require("fs");
 
 const dbConnector = require("./DBConnector");
 const dbConfig = require("./dbConfig.json");
@@ -21,12 +22,15 @@ app.use(dbConnector(dbConfig));
 console.log(prepareQuery("select * from acl"));
 
 app.get("/something", (req, res, next) => {
+  // // get latest query
+  // const jsonObj = JSON.parse(fs.readFileSync("./query.json", "utf8"));
+  // const query = jsonObj.query;
   req.getConnection((err, connection) => {
     if (!err) {
       // writing queries
       connection.query("select * from acl", (err, result) => {
         // handle result or err
-        console.log(result);
+        // console.log(result);
         res.send("...");
       });
     } else {
