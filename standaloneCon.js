@@ -7,10 +7,11 @@ const connection = mysql.createConnection(db.getCredentials());
 
 connection.connect();
 
-const queryStr = "SELECT * FROM roles";
+let queryStr;
 let fromDB = [];
 
 const getInformationFromDB = callback => {
+  queryStr = db.getQuery();
   connection.query(queryStr, (err, result) => {
     if (err) return callback(err);
 
@@ -23,10 +24,16 @@ const getInformationFromDB = callback => {
   });
 };
 
-const toExport = () =>
-  getInformationFromDB((err, result) => {
-    if (err) console.log("Database error!");
-    else console.log(result);
-  });
+const queryDB = query => {
+  db.setQuery(query);
 
-module.exports = { toExport };
+  getInformationFromDB((err, result) => {
+    if (err) console.log("Database error!" + err);
+    else {
+      console.log(result);
+      connection.end();
+    }
+  });
+};
+
+module.exports = { queryDB };
