@@ -1,11 +1,11 @@
-const { toExport } = require("./../standaloneCon");
+const { queryDB } = require("./../standaloneCon");
 const roleFile = require("./role.json");
 
 class AccessAllowance {
   constructor() {
     this.role = roleFile.role;
     this.permissions = "";
-    this.asdf = toExport();
+    this.asdf = queryDB("select * from roles");
   }
 
   addChild() {
