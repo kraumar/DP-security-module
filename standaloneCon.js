@@ -23,7 +23,10 @@ const getInformationFromDB = callback => {
   });
 };
 
-getInformationFromDB((err, result) => {
-  if (err) console.log("Database error!");
-  else console.log(result);
-});
+const toExport = () =>
+  getInformationFromDB((err, result) => {
+    if (err) console.log("Database error!");
+    else console.log(result);
+  });
+
+module.exports = { toExport };
