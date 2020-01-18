@@ -27,3 +27,5 @@ getInformationFromDB((err, result) => {
   if (err) console.log("Database error!");
   else console.log(result);
 });
+
+module.exports = { getInformationFromDB };
