@@ -50,6 +50,23 @@ class DBSecurityModule {
     fs.writeFileSync("./query.json", JSON.stringify(output));
   }
 
+  getResponse() {
+    // const jsonObj = JSON.parse(fs.readFileSync("./response.json", "utf8"));
+    // const query = jsonObj.query;
+
+    // return query;
+
+    return JSON.parse(fs.readFileSync("./response.json", "utf8"));
+  }
+
+  setResponse(response) {
+    // const output = {
+    //   query
+    // };
+
+    fs.writeFileSync("./response.json", JSON.stringify(response));
+  }
+
   query() {
     const readyQuery = prepareQuery(this.getQuery());
 
