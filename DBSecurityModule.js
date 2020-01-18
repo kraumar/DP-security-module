@@ -14,12 +14,32 @@ class DBSecurityModule {
     fs.writeFileSync("./dbConfig.json", JSON.stringify(output));
   }
 
+  getCredentials() {
+    const jsonObj = JSON.parse(fs.readFileSync("./dbConfig.json", "utf8"));
+
+    return jsonObj;
+  }
+
+  getRole() {
+    const jsonObj = JSON.parse(fs.readFileSync("./role.json", "utf8"));
+    const role = jsonObj.role;
+
+    return role;
+  }
+
   setRole(role) {
     const output = {
       role
     };
 
     fs.writeFileSync("./role.json", JSON.stringify(output));
+  }
+
+  getQuery() {
+    const jsonObj = JSON.parse(fs.readFileSync("./query.json", "utf8"));
+    const query = jsonObj.query;
+
+    return query;
   }
 
   setQuery(query) {
@@ -31,10 +51,7 @@ class DBSecurityModule {
   }
 
   query() {
-    const jsonObj = JSON.parse(fs.readFileSync("./query.json", "utf8"));
-    const query = jsonObj.query;
-
-    const readyQuery = prepareQuery(query);
+    const readyQuery = prepareQuery(this.getQuery());
 
     // save ready query
     const output = {
@@ -53,3 +70,5 @@ const db = new DBSecurityModule();
 // db.setRole("admin");
 // db.setQuery("select * from acl");
 // db.query();
+
+module.exports = DBSecurityModule;
